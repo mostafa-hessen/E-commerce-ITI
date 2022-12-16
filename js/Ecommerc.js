@@ -2,18 +2,12 @@
 let RowContainer = document.querySelector(".row");
 let addTocartBtn;
 let spanCounter = document.getElementById("spanCounter");
-var [perfEntries] = performance.getEntriesByType("navigation");
-console.table(perfEntries["type"]);
-if (perfEntries[0].type === "back_forward") {
-  
-    location.reload(true);
-}
 
 fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
   .then((data) => {
     data.forEach((element) => {
-      console.log("", element.id);
+      // console.log("", element.id);
       RowContainer.innerHTML += `
         <div   id=${element.id}  style="margin-bottom:20px !important" class="product col-md-6 col-lg-4 mb-5 mb-md-0">
         <div style="height:520px"class="card d-flex dirction-column justify-content-between" >
@@ -105,3 +99,13 @@ id = JSON.parse(localStorage.getItem("ids"))
   ? JSON.parse(localStorage.getItem("ids"))
   : [];
 spanCounter.innerHTML = id.length;
+
+
+
+//   [perfEntries] = performance.getEntriesByType("navigation");
+// console.table(perfEntries["type"]);
+// if (perfEntries["type"] === "back_forward") {
+  
+//     location.reload(true);
+// }
+

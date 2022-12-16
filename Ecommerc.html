@@ -39,8 +39,16 @@
       </section>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./bootStrap/bootstrap.min.js"></script>
     <!-- <script src="./Ecommerc.js"></script> -->
     <script src="./js/Ecommerc.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(e) {
+    var $input = $('#refresh');
+
+    $input.val() == 'yes' ? location.reload(true) : $input.val('yes');
+});
+      </script>
   </body>
 </html>

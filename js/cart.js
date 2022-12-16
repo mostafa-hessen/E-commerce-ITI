@@ -348,9 +348,17 @@ btnRemove.forEach((ele) => ele.addEventListener("click", removeItemFunction));
 //   }
 // });
 
-var [perfEntries] = performance.getEntriesByType("navigation");
-console.table(perfEntries["type"]);
-if (perfEntries[0].type === "back_forward") {
+// var [perfEntries] = performance.getEntriesByType("navigation");
+// console.table(perfEntries["type"]);
+// if (perfEntries[0].type === "back_forward") {
   
-    location.reload(true);
-}
+//     location.reload(true);
+// }
+
+
+// var [perfEntries] = performance.getEntriesByType("navigation");
+// console.table(perfEntries["type"]);
+// if (perfEntries["type"] === "back_forward") {
+  
+//     location.reload(true);
+// }
