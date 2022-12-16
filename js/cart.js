@@ -336,3 +336,21 @@ let btnRemove = document.querySelectorAll(".btn-remove");
 btnPlus.forEach((ele) => ele.addEventListener("click", pulusFunction));
 btnMinus.forEach((ele) => ele.addEventListener("click", minusFunction));
 btnRemove.forEach((ele) => ele.addEventListener("click", removeItemFunction));
+
+// window.addEventListener( "pageshow", function ( event ) {
+//   console.log("lkmjnhbvcx",event.persisted,   window.performance.navigation.type);
+//   var historyTraversal = event.persisted || 
+//                          ( typeof window.performance != "undefined" && 
+//                               window.performance.navigation.type === 2 );
+//   if ( historyTraversal ) {
+//     // Handle page restore.
+//     window.location.reload();
+//   }
+// });
+
+var [perfEntries] = performance.getEntriesByType("navigation");
+console.table(perfEntries["type"]);
+if (perfEntries[0].type === "back_forward") {
+  
+    location.reload(true);
+}

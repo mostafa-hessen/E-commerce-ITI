@@ -2,6 +2,12 @@
 let RowContainer = document.querySelector(".row");
 let addTocartBtn;
 let spanCounter = document.getElementById("spanCounter");
+var [perfEntries] = performance.getEntriesByType("navigation");
+console.table(perfEntries["type"]);
+if (perfEntries[0].type === "back_forward") {
+  
+    location.reload(true);
+}
 
 fetch("https://fakestoreapi.com/products")
   .then((response) => response.json())
